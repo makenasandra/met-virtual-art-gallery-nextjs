@@ -1,0 +1,32 @@
+.featured {  
+    max-width: var(--max-width, 46.875rem); 
+    margin-bottom: 2rem; 
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;
+  }  
+    
+  .featuredImage {  
+    height: auto;
+    width: 100%;
+    border-radius: 0.5rem;
+  }  
+    
+  .title {  
+    font-size: 1.25rem;  
+    font-weight: bold;  
+    width: 100%; 
+    z-index: 2;  
+    font-family: var(--font-mono);  
+    text-align: center;
+  }  
+  .comments_section {
+    background: #FFFAE5;
+    padding: 1.5em 1.5em 0em;
+    margin: 1.5em 0em;
+    margin-bottom: 0em;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+  }
+  
