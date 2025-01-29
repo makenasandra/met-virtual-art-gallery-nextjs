@@ -1,33 +1,35 @@
-import { cache } from 'react'
-import 'server-only'
+import { cache } from "react";
+import "server-only";
 
-const baseUrl = 'https://collectionapi.metmuseum.org/public/collection/v1'
+const baseUrl = "https://collectionapi.metmuseum.org/public/collection/v1";
 
 // Using Met Museum of Art API: https://metmuseum.github.io/
 export const fetchObjectIDs = cache(async (term: string) => {
-  const res = await fetch(`${baseUrl}/search?hasImages=true&q=${term}`, {
-    next: {
-      revalidate: 10,
-    },
-  })
-  if (res.status !== 200) {
-    throw new Error(`Status ${res.status}`)
+  const response = await fetch(`${baseUrl}/search?hasImages=true&q=${term}`, {
+    next: { revalidate: 10 },
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch!");
   }
-  return res.json()
-})
+
+  return response.json();
+});
 
 export const fetchObject = cache(async (objectID: number) => {
-  const res = await fetch(`${baseUrl}/objects/${objectID}`, {
-    next: {
-      revalidate: 10,
-    },
-  })
+  const response = await fetch(`${baseUrl}/objects/${objectID}`, {
+    next: { revalidate: 10 },
+  });
 
-  if (res.status !== 200) {
-    return { data: null, error: `${res.status}: ${res.statusText}` }
+  if (!response.ok) {
+    return { 
+      data: null, 
+      error: "Failed to fetch data!" };
   }
 
-  const data = await res.json()
+  const data = await response.json();
+  return { 
+    data, 
+    error: null };
 
-  return { data, error: null }
-})
+});
