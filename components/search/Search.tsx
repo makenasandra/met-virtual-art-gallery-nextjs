@@ -9,7 +9,7 @@ export default function SearchBar({ placeholder }: { placeholder: string }) {
   const router = useRouter();
 
   const handleSubmit = (event: React.SyntheticEvent) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
     const target = event.target as typeof event.target & {
       searchTerm: {
         value: string;

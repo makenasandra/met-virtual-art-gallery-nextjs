@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react'
 import NewCommentForm from './NewCommentForm';
-import { Comment } from '../../utils/utils';
+import type { Comment } from '../../utils/utils';
 import styles from './Comment.module.css';
 import { randomUUID } from 'crypto';
 

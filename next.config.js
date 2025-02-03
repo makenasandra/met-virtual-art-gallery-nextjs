@@ -4,7 +4,7 @@ const { hostname } = require('os')
 const nextConfig = {
     compress: false,
     images: {
-      unoptimized: true,
+     // unoptimized: true,
       remotePatterns: [
         {
           protocol: 'https',
