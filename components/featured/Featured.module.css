@@ -10,6 +10,7 @@
     height: auto;
     width: 100%;
     border-radius: 0.5rem;
+    border-color: white;
   }  
     
   .title {  
@@ -21,7 +22,8 @@
     text-align: center;
   }  
   .comments_section {
-    background: #FFFAE5;
+    background: white;
+    color: black;
     padding: 1.5em 1.5em 0em;
     margin: 1.5em 0em;
     margin-bottom: 0em;

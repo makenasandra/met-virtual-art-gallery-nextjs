@@ -11,14 +11,7 @@ export default function Home() {
     //     <ArtGallery />
     //   </Suspense>
     // </main>
-    <main  style={{
-      minHeight: "100vh",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: "#f3f4f6",
-      padding: "16px",
-    }}>
+    <main className={styles.main}>
     <AutoScrollImageShell />
   </main>
   );
