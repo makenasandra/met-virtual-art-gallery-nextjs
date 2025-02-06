@@ -1,24 +1,18 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Key } from "react"
 import Image from "next/image"
 import styles from "./AutoScrollImageSlider.module.css"
+import Featured from "../featured/Featured"
+import { Artwork } from "@/data/local-art-data"
 
-const images = [
-  "/placeholder.svg?height=400&width=600&text=Image+1",
-  "/placeholder.svg?height=400&width=600&text=Image+2",
-  "/placeholder.svg?height=400&width=600&text=Image+3",
-  "/placeholder.svg?height=400&width=600&text=Image+4",
-  "/placeholder.svg?height=400&width=600&text=Image+5",
-]
-
-export default function AutoScrollImageSlider() {
+export default function AutoScrollImageSlider({images}: {images: any}) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 5000)
+    }, 30000)
 
     return () => clearInterval(interval)
   }, [])
@@ -26,20 +20,14 @@ export default function AutoScrollImageSlider() {
   return (
     <div className={styles.sliderContainer}>
       <div className={styles.sliderWrapper} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-        {images.map((src, index) => (
+        {images.map((artWork: Artwork, index: number) => (
           <div key={index} className={styles.slide}>
-            <Image
-              src={src || "/placeholder.svg"}
-              alt={`Slide ${index + 1}`}
-              width={600}
-              height={400}
-              className={styles.image}
-            />
+            <Featured key={artWork.objectID} {...artWork}/>
           </div>
         ))}
       </div>
       <div className={styles.indicators}>
-        {images.map((_, index) => (
+        {images.map((_, index: number) => (
           <button
             key={index}
             className={`${styles.indicator} ${index === currentIndex ? styles.indicatorActive : ""}`}

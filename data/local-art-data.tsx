@@ -57,4 +57,5 @@ export const artData: Artwork[] = [
     artistDisplayName: string
     objectDate: string
   }
+
   

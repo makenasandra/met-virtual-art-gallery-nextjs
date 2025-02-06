@@ -19,9 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <div className="urlBar">
-          <UrlBar baseURL="http://localhost:4001" />
-        </div> */}
         <Nav />
         {children}
       </body>
