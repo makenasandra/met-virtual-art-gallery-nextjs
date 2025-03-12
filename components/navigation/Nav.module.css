@@ -5,7 +5,9 @@
     list-style-type: none;
     padding: 1em;
     position: fixed;
-    background-color: rgb(255, 235, 203);
+    background-color: white;
+    border-bottom: 0.25em solid rgb(255, 235, 203);
+    opacity: 0.95;
     top: 0;
     left: 0;
     right: 0;
