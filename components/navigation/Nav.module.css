@@ -1,12 +1,25 @@
 .navUl {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     list-style-type: none;
     padding: 1em;
+    position: fixed;
+    background-color: rgb(255, 235, 203);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    
   }
   
   .selected > a {
     background: #3A10E5;
     color: #FFFAE5;
+  }
+
+  .button{
+
   }
   
   .logo {
@@ -15,7 +28,9 @@
     font-weight: 500;
     display: inline-block;
     font-family: inherit;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-right: 0.5rem;
+    color: orange;
+
   }
   
